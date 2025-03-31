@@ -1,0 +1,50 @@
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import SignUpButton from "./components/SignIn";
+import Slideshow from "./components/Slideshow";
+import CategoryNav from "./components/CategoryNav";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+import SubcategoryPage from "./components/SubcategoryPage";
+
+function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  return (
+    <Router>
+      <div>
+        <Header cartItems={cartItems} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <CategoryNav />
+                <Slideshow />
+                <Products cartItems={cartItems} setCartItems={setCartItems} />
+                <div style={{ padding: "20px" }}></div>
+              </div>
+            }
+          />
+          <Route path="/SignIn" element={<SignUpButton />} />
+          <Route
+            path="/cart"
+            element={<Cart cartItems={cartItems} setCartItems={setCartItems} />}
+          />
+          <Route
+            path="/category/:subcategory"
+            element={
+              <SubcategoryPage
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+              />
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
