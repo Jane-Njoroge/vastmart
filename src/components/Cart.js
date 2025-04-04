@@ -1,7 +1,10 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Add this import
 
 const Cart = ({ cartItems, setCartItems }) => {
+  const navigate = useNavigate(); // Initialize navigate
+
   // Calculate total amount with custom formatting
   const calculateTotal = () => {
     const total = cartItems.reduce((total, item) => {
@@ -49,17 +52,19 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems([]);
   };
 
-  // Handle complete purchase (placeholder for now)
+  // Handle complete purchase with navigation
   const handleCompletePurchase = () => {
-    console.log("Purchase completed! Cart items:", cartItems);
-    // You can add more functionality here, like redirecting to a checkout page
-    // or clearing the cart after a successful purchase
-    // For example: setCartItems([]);
+    if (cartItems.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+    console.log("Navigating to checkout with cart items:", cartItems);
+    navigate("/checkout"); // Redirect to checkout page
   };
 
   const styles = {
     cartPageContainer: {
-      padding: "80px 20px 20px", // Adjusted top padding for header
+      padding: "80px 20px 20px",
       maxWidth: "800px",
       margin: "0 auto",
       backgroundColor: "#fff",
@@ -143,20 +148,20 @@ const Cart = ({ cartItems, setCartItems }) => {
     completePurchaseButton: {
       marginTop: "20px",
       padding: "10px 20px",
-      backgroundColor: "#ff0000", // Matches the theme (red color)
+      backgroundColor: "#ff0000",
       color: "white",
       border: "none",
       borderRadius: "5px",
       cursor: "pointer",
       fontSize: "1em",
       fontWeight: "bold",
-      display: "block", // Ensures the button takes full width
-      marginLeft: "auto", // Aligns to the right
-      width: "fit-content", // Button width adjusts to content
+      display: "block",
+      marginLeft: "auto",
+      width: "fit-content",
       transition: "background-color 0.3s",
     },
     completePurchaseButtonHover: {
-      backgroundColor: "#cc0000", // Slightly darker red on hover
+      backgroundColor: "#cc0000",
     },
     emptyCart: {
       textAlign: "center",

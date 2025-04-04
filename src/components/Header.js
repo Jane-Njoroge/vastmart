@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Import Link for navigation
-import SignIn from "./SignIn";
+// import SignIn from "./SignIn"; // Commented out SignIn import
 
 function VastMartHeader({ cartItems }) {
-  const [showSignInForm, setShowSignInForm] = useState(false);
+  // const [showSignInForm, setShowSignInForm] = useState(false); // Commented out sign-in state
 
-  const toggleSignInForm = () => {
-    setShowSignInForm((prev) => !prev);
-  };
+  // const toggleSignInForm = () => {
+  //   setShowSignInForm((prev) => !prev);
+  // }; // Commented out toggle function
 
   const cartItemCount = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -101,7 +101,8 @@ function VastMartHeader({ cartItems }) {
             marginRight: "100px",
           }}
         >
-          <button
+          {/* Commented out Sign In button */}
+          {/* <button
             onClick={toggleSignInForm}
             style={{
               display: "flex",
@@ -116,7 +117,7 @@ function VastMartHeader({ cartItems }) {
           >
             <FaUser style={{ marginRight: "5px", color: "#e00" }} />
             {showSignInForm ? "Close Form" : "Sign In"}
-          </button>
+          </button> */}
 
           <div
             style={{
@@ -162,11 +163,12 @@ function VastMartHeader({ cartItems }) {
         </div>
       </header>
 
-      {showSignInForm && (
+      {/* Commented out SignIn form rendering */}
+      {/* {showSignInForm && (
         <div style={{ marginTop: "60px" }}>
           <SignIn />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

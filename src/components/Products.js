@@ -260,7 +260,7 @@ const productsData = {
 
 const Products = ({ selectedCategory, cartItems, setCartItems }) => {
   // Estimate items per row based on the grid layout
-  const itemsPerRow = 3; // Assumption: ~3 items per row for a 1200px container with minmax(180px, 1fr)
+  const itemsPerRow = 5; // Assumption: ~3 items per row for a 1200px container with minmax(180px, 1fr)
   const rowsPerLoad = 3; // Load 3 rows at a time
   const itemsPerLoad = itemsPerRow * rowsPerLoad; // 3 rows * 3 items/row = 9 items per load
 
