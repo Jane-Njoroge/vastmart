@@ -8,6 +8,7 @@ import Products from "./components/Products";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import SubcategoryPage from "./components/SubcategoryPage";
+import AboutUs from "./components/About";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -25,6 +26,7 @@ function App() {
                 <Slideshow />
                 <Products cartItems={cartItems} setCartItems={setCartItems} />
                 <div style={{ padding: "20px" }}></div>
+                <AboutUs />
               </div>
             }
           />

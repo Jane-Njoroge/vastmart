@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const Slideshow = () => {
   const images = [
-    "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202503/h-054053145-16x9_0.png?VersionId=qUsUmuRmJGNMAsoujPDbKJt29_7iwodS&size=690:388",
-    "https://preview.redd.it/guests-who-ditch-refrigerated-food-why-we-had-to-defect-all-v0-l2arw9e1mbl91.jpg?width=640&crop=smart&auto=webp&s=694a626c31bd983a7d39f96101307b608dc57dd1",
+    "https://cdn.prod.website-files.com/61eaa3470cc7de3ef77364b3/65a001fdb964168cd6fb2441_63c16ac29410cbdbe355df5a_easter-wishes-1583183141-p-500.webp",
+    "https://img.freepik.com/free-vector/flat-design-supermarket-twitter-header-template_23-2149349364.jpg",
     "https://img.freepik.com/premium-vector/special-product-offer-label-logo_637458-481.jpg?w=900",
   ];
 
